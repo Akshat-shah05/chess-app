@@ -1,4 +1,6 @@
-#chessboard .tile {
+.tile {
+    display: grid;
+    place-content: center;
     width: 5rem;
     height: 5rem;
 }
@@ -10,4 +12,8 @@
 
 .white-tile {
     background-color: #ebecd0;
+}
+
+.tile img {
+    width: 4.5rem;
 }

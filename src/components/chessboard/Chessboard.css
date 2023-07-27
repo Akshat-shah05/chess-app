@@ -12,6 +12,19 @@
     height: 5rem;
 }
 
+.tile-label {
+    display: inline-block;
+    text-align: center;
+    height: 5rem;
+    width: 5rem;
+    padding: 0;
+    padding-top: 10px;
+    color: white;
+    margin-right:0;
+}
+
+
+
 #chessboard .green-tile {
     background-color: #779556;
 

@@ -1,0 +1,13 @@
+#chessboard .tile {
+    width: 5rem;
+    height: 5rem;
+}
+
+.green-tile {
+    background-color: #779556;
+
+}
+
+.white-tile {
+    background-color: #ebecd0;
+}

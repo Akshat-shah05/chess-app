@@ -33,7 +33,7 @@ const Chessboard = () => {
             <div id="chessboard">{board}</div>
         </div>
         <div className="horizontal-label">{hLabel}</div>  
-        <h1> boomer </h1>
+        
     </>
   );
 };

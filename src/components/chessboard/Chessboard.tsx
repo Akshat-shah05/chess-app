@@ -29,8 +29,6 @@ const Chessboard = () => {
     vLabel.push(<div className="tile-label2 white-tile">{verticalAxis[i]}</div>)
   }
 
-
-
   return (
     <>
       <div id="chessboard-container">

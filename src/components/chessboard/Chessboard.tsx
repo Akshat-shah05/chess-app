@@ -59,10 +59,41 @@ pieces.push({image: "assets/queen_w.png", x: 3, y: 0})
 // both kings
 pieces.push({image: "assets/king_w.png", x: 4, y: 0})
 
+let activePiece: HTMLElement | null = null;
+
+function grabPiece(e: React.MouseEvent){
+  const element = e.target as HTMLElement;
+  if(element.classList.contains('chess-piece')) {
+    console.log(e)
+
+    const x = e.clientX -40;
+    const y = e.clientY -40;
+    element.style.position = 'absolute'
+    element.style.left = `${x}px`;
+    element.style.top = `${y}px`;
+  }
+}
+
+function movePiece(e: React.MouseEvent) {
+  const element = e.target as HTMLElement;
+
+  console.log(element)
+
+  if (element.classList.contains('chess-piece')) {
+    const x = e.clientX -40;
+    const y = e.clientY -40;
+    element.style.position = 'absolute'
+    element.style.left = `${x}px`;
+    element.style.top = `${y}px`;
+  }
+
+  console.log(element)
+}
 
 const Chessboard = () => {
   let board = [];
 
+  // eslint-disable-next-line no-lone-blocks
   {/* Loop to produce the chessboard */}
   for (let j = verticalAxis.length - 1; j >= 0; j--) {
     for (let i = 0; i < horizontalAxis.length; i++) {
@@ -75,13 +106,13 @@ const Chessboard = () => {
         }
       })
 
-      board.push(<Tile image={image} number={number}/>)
+      board.push(<Tile key={`${j},${i}`} image={image} number={number}/>)
     }
   }
  
   return (
     <>
-      <div id="chessboard">{board}</div>
+      <div onMouseMove={(e) => movePiece(e)} onMouseDown={e => grabPiece(e)} id="chessboard">{board}</div>
     </>
   );
 };

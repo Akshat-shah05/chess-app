@@ -85,6 +85,12 @@ function movePiece(e: React.MouseEvent) {
   }
 }
 
+function dropPiece(e: React.MouseEvent) {
+  if (activePiece) {
+    activePiece = null
+  }
+}
+
 const Chessboard = () => {
   let board = [];
 
@@ -107,7 +113,14 @@ const Chessboard = () => {
  
   return (
     <>
-      <div onMouseMove={(e) => movePiece(e)} onMouseDown={e => grabPiece(e)} id="chessboard">{board}</div>
+      <div 
+        onMouseMove={(e) => movePiece(e)} 
+        onMouseDown={e => grabPiece(e)} 
+        onMouseUp={e => dropPiece(e)}
+        id="chessboard"
+      >
+        {board}
+      </div>
     </>
   );
 };
